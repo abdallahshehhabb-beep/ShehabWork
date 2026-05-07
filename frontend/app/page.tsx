@@ -1,0 +1,1 @@
+export default function Home(){return <main style={{padding:24}}><h1>منصة جمع الصوت والتفريغ</h1><p>واجهة عربية حديثة لإدارة التسجيلات والتفريغ.</p></main>}
