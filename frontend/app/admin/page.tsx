@@ -21,6 +21,7 @@ type Project = {
   id: string;
   title: string;
   type: string;
+  language: string;
   reward: string;
   adminCommission?: string;
   status: string;
