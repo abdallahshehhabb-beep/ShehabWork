@@ -65,7 +65,7 @@ export default function ProfilePage() {
               className="input-field" 
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              direction="ltr"
+              style={{ direction: 'ltr' }}
             />
           </div>
 
