@@ -91,6 +91,17 @@ export default function ProfilePage() {
             ></textarea>
           </div>
 
+          <div className="input-group" style={{ marginBottom: 0 }}>
+            <label className="input-label">صورة البطاقة الشخصية (للتوثيق)</label>
+            <div 
+              style={{ border: '2px dashed var(--border-color)', borderRadius: '8px', padding: '20px', textAlign: 'center', cursor: 'pointer', background: '#f9f9f9' }}
+              onClick={() => document.getElementById('id-upload')?.click()}
+            >
+              اضغط هنا لرفع/تحديث صورة البطاقة
+            </div>
+            <input type="file" id="id-upload" style={{ display: 'none' }} accept="image/*" />
+          </div>
+
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '10px' }}>
             {isSaved ? (
               <span style={{ color: 'var(--success)' }}>✅ تم الحفظ بنجاح!</span>

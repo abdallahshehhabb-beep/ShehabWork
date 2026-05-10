@@ -22,4 +22,9 @@ export class AuthController {
     const success = await this.authService.verifyEmail(token);
     return { success };
   }
+
+  @Post('verify-otp')
+  async verifyOtp(@Body('email') email: string, @Body('otp') otp: string) {
+    return this.authService.verifyLoginOtp(email, otp);
+  }
 }

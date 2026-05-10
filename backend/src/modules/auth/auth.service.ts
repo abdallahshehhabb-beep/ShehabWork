@@ -37,6 +37,24 @@ export class AuthService {
     if (user.status === 'pending') {
       throw new ForbiddenException('حسابك قيد المراجعة من قِبل الإدارة. سيتم إبلاغك عند الموافقة.');
     }
+    
+    // Generate 6-digit OTP
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    await this.usersService.setLoginOtp(user.email, otp);
+    await this.mailService.sendLoginOtpEmail(user.email, otp);
+
+    return {
+      message: 'OTP_SENT',
+      email: user.email
+    };
+  }
+
+  async verifyLoginOtp(email: string, otp: string) {
+    const user = await this.usersService.verifyLoginOtp(email, otp);
+    if (!user) {
+      throw new UnauthorizedException('كود التحقق غير صحيح');
+    }
+    
     const payload = { email: user.email, sub: user.id, role: user.role };
     return {
       access_token: this.jwtService.sign(payload),

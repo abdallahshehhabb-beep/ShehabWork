@@ -99,4 +99,22 @@ export class UsersService {
     await this.usersRepository.save(user);
     return true;
   }
+
+  async setLoginOtp(email: string, otp: string) {
+    const user = await this.findByEmail(email);
+    if (user) {
+      user.loginOtp = otp;
+      await this.usersRepository.save(user);
+    }
+  }
+
+  async verifyLoginOtp(email: string, otp: string) {
+    const user = await this.findByEmail(email);
+    if (user && user.loginOtp === otp) {
+      user.loginOtp = null; // Clear OTP after use
+      await this.usersRepository.save(user);
+      return user;
+    }
+    return null;
+  }
 }

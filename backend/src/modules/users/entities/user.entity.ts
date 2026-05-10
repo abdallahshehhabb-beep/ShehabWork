@@ -60,6 +60,9 @@ export class User {
   @Column({ nullable: true })
   emailVerificationToken: string;
 
+  @Column({ nullable: true })
+  loginOtp: string;
+
   @CreateDateColumn()
   createdAt: Date;
 
