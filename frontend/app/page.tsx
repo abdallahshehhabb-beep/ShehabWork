@@ -15,7 +15,7 @@ const content = {
     features: [
       { icon: '🎙️', title: 'مشاريع تسجيل', desc: 'فرص عمل متنوعة في مجال التعليق الصوتي وتدريب نماذج الذكاء الاصطناعي.' },
       { icon: '📝', title: 'تفريغ صوتي', desc: 'تحويل الملفات الصوتية إلى نصوص بدقة عالية في مختلف المجالات.' },
-      { icon: '⚖️', title: 'نظام عادل', desc: 'عمولات واضحة ونظام دفع موثوق يضمن حقوق جميع الأطراف.' }
+      { icon: '⚖️', title: 'نظام عادل', desc: 'عمولات واضحة ونظام دفع موثوق يضمن حقوق جميع الأطراف لمشاريع التسجيل والتفريغ والترجمة.' }
     ],
     footer: '© 2026 شركة شهاب تك للمشاريع الصوتية. جميع الحقوق محفوظة.',
     langBtn: 'English'
@@ -32,7 +32,7 @@ const content = {
     features: [
       { icon: '🎙️', title: 'Recording Projects', desc: 'Diverse job opportunities in voice-over and AI model training.' },
       { icon: '📝', title: 'Transcription', desc: 'Converting audio files into text with high accuracy in various fields.' },
-      { icon: '⚖️', title: 'Fair System', desc: 'Clear commissions and a reliable payment system ensuring rights for all parties.' }
+      { icon: '⚖️', title: 'Fair System', desc: 'Clear commissions and a reliable payment system ensuring rights for all parties for recording, transcription, and translation projects.' }
     ],
     footer: '© 2026 Shehab Tech for Audio Projects. All rights reserved.',
     langBtn: 'العربية'
@@ -68,7 +68,7 @@ export default function LandingPage() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        backgroundImage: 'url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop")',
+        backgroundImage: 'url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2000")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         color: 'white'
@@ -80,7 +80,7 @@ export default function LandingPage() {
           left: 0, 
           right: 0, 
           bottom: 0, 
-          background: 'rgba(0, 0, 0, 0.65)',
+          background: 'rgba(0, 0, 0, 0.75)',
           zIndex: 1
         }}></div>
 
