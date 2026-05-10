@@ -14,7 +14,7 @@ const content = {
     memberLogin: 'دخول الأعضاء',
     features: [
       { icon: '🎙️', title: 'مشاريع تسجيل', desc: 'فرص عمل متنوعة في مجال التعليق الصوتي وتدريب نماذج الذكاء الاصطناعي.' },
-      { icon: '📝', title: 'تفريغ صوتي', desc: 'تحويل الملفات الصوتية إلى نصوص بدقة عالية في مختلف المجالات الطبية والقانونية.' },
+      { icon: '📝', title: 'تفريغ صوتي', desc: 'تحويل الملفات الصوتية إلى نصوص بدقة عالية في مختلف المجالات.' },
       { icon: '⚖️', title: 'نظام عادل', desc: 'عمولات واضحة ونظام دفع موثوق يضمن حقوق جميع الأطراف.' }
     ],
     footer: '© 2026 شركة شهاب تك للمشاريع الصوتية. جميع الحقوق محفوظة.',
@@ -31,7 +31,7 @@ const content = {
     memberLogin: 'Member Login',
     features: [
       { icon: '🎙️', title: 'Recording Projects', desc: 'Diverse job opportunities in voice-over and AI model training.' },
-      { icon: '📝', title: 'Transcription', desc: 'Converting audio files into text with high accuracy in various medical and legal fields.' },
+      { icon: '📝', title: 'Transcription', desc: 'Converting audio files into text with high accuracy in various fields.' },
       { icon: '⚖️', title: 'Fair System', desc: 'Clear commissions and a reliable payment system ensuring rights for all parties.' }
     ],
     footer: '© 2026 Shehab Tech for Audio Projects. All rights reserved.',
@@ -59,18 +59,43 @@ export default function LandingPage() {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <div style={{ padding: '100px 50px', textAlign: 'center', maxWidth: '1000px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '3.5rem', fontWeight: 900, marginBottom: '25px', lineHeight: 1.1 }}>
-          {t.title} <span style={{ color: 'var(--primary)' }}>{t.company}</span> <br /> {t.subtitle}
-        </h1>
-        <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', marginBottom: '40px', lineHeight: 1.6 }}>
-          {t.desc}
-        </p>
-        
-        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
-          <Link href="/register" className="btn-primary" style={{ padding: '15px 40px', fontSize: '1.1rem', textDecoration: 'none' }}>{t.createAcc}</Link>
-          <Link href="/login" className="btn-secondary" style={{ padding: '15px 40px', fontSize: '1.1rem', textDecoration: 'none' }}>{t.memberLogin}</Link>
+      {/* Hero Section with Background Image */}
+      <div style={{ 
+        position: 'relative',
+        padding: '120px 50px', 
+        textAlign: 'center', 
+        minHeight: '60vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        backgroundImage: 'url("https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2070&auto=format&fit=crop")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        color: 'white'
+      }}>
+        {/* Black Overlay */}
+        <div style={{ 
+          position: 'absolute', 
+          top: 0, 
+          left: 0, 
+          right: 0, 
+          bottom: 0, 
+          background: 'rgba(0, 0, 0, 0.65)',
+          zIndex: 1
+        }}></div>
+
+        <div style={{ position: 'relative', zIndex: 2, maxWidth: '1000px', margin: '0 auto' }}>
+          <h1 style={{ fontSize: '3.5rem', fontWeight: 900, marginBottom: '25px', lineHeight: 1.1 }}>
+            {t.title} <span style={{ color: 'var(--primary)' }}>{t.company}</span> <br /> {t.subtitle}
+          </h1>
+          <p style={{ fontSize: '1.2rem', color: '#e0e0e0', marginBottom: '40px', lineHeight: 1.6 }}>
+            {t.desc}
+          </p>
+          
+          <div style={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+            <Link href="/register" className="btn-primary" style={{ padding: '15px 40px', fontSize: '1.1rem', textDecoration: 'none' }}>{t.createAcc}</Link>
+            <Link href="/login" className="btn-secondary" style={{ padding: '15px 40px', fontSize: '1.1rem', textDecoration: 'none', background: 'rgba(255,255,255,0.1)', color: 'white', borderColor: 'white' }}>{t.memberLogin}</Link>
+          </div>
         </div>
       </div>
 
