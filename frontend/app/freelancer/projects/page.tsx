@@ -11,10 +11,10 @@ type Project = {
   reward: string;
   adminCommission?: string;
   description: string;
-  language: string;
-  createdAt: string;
+  language: any;
+  createdAt: any;
   status: string;
-  user?: { name: string };
+  user?: any;
 };
 
 export default function FreelancerProjectsPage() {
