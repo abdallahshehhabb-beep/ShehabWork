@@ -9,6 +9,7 @@ type Project = {
   title: string;
   type: string;
   reward: string;
+  adminCommission?: string;
   description: string;
   language: string;
   createdAt: string;
