@@ -68,6 +68,7 @@ export default function LoginPage() {
 
   const completeLogin = (data: any) => {
     localStorage.setItem('access_token', data.access_token);
+    localStorage.setItem('user_id', data.user.id);
     localStorage.setItem('user_role', data.user.role);
     localStorage.setItem('user_name', data.user.name);
     

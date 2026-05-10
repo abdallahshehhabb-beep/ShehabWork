@@ -58,6 +58,8 @@ export class UsersService {
     if (updateUserDto.status) user.status = updateUserDto.status;
     if (updateUserDto.country !== undefined) user.country = updateUserDto.country;
     if (updateUserDto.phone !== undefined) user.phone = updateUserDto.phone;
+    if (updateUserDto.photoUrl !== undefined) user.photoUrl = updateUserDto.photoUrl;
+    if (updateUserDto.idCardUrl !== undefined) user.idCardUrl = updateUserDto.idCardUrl;
     if (updateUserDto.skills !== undefined) user.skills = updateUserDto.skills;
     if (updateUserDto.languages !== undefined) user.languages = updateUserDto.languages;
     return this.usersRepository.save(user);

@@ -7,6 +7,8 @@ export class UpdateUserDto {
   status?: UserStatus;
   country?: string;
   phone?: string;
+  photoUrl?: string;
+  idCardUrl?: string;
   skills?: string[];
   languages?: string[];
 }
