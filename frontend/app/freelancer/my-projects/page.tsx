@@ -3,7 +3,7 @@ import { AppLayout } from '../../../components/AppLayout';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://audio-platform-backend-v2.vercel.app/api';
 
 type ProjectAssignment = {
   id: string;
