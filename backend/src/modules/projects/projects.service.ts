@@ -14,15 +14,35 @@ export class ProjectsService {
 
   async create(createProjectDto: CreateProjectDto): Promise<Project> {
     const project = this.projectsRepository.create({
-      name: createProjectDto.name,
+      title: createProjectDto.title,
       description: createProjectDto.description,
+      type: createProjectDto.type,
+      language: createProjectDto.language,
+      nationalityReq: createProjectDto.nationalityReq,
+      autoAccept: createProjectDto.autoAccept,
+      reward: createProjectDto.reward,
+      applicantsReq: createProjectDto.applicantsReq,
+      deadline: createProjectDto.deadline,
+      generateCodes: createProjectDto.generateCodes,
+      adminCommission: createProjectDto.adminCommission,
       user: { id: createProjectDto.userId },
     });
     return this.projectsRepository.save(project);
   }
 
-  async findAll(): Promise<Project[]> {
-    return this.projectsRepository.find({ relations: ['user'] });
+  async findAll(filters?: { type?: string; language?: string }): Promise<Project[]> {
+    const query = this.projectsRepository.createQueryBuilder('project')
+      .leftJoinAndSelect('project.user', 'user');
+
+    if (filters?.type) {
+      query.andWhere('project.type = :type', { type: filters.type });
+    }
+
+    if (filters?.language) {
+      query.andWhere('project.language = :language', { language: filters.language });
+    }
+
+    return query.getMany();
   }
 
   async findOne(id: string): Promise<Project> {
@@ -35,8 +55,7 @@ export class ProjectsService {
 
   async update(id: string, updateProjectDto: UpdateProjectDto): Promise<Project> {
     const project = await this.findOne(id);
-    if (updateProjectDto.name) project.name = updateProjectDto.name;
-    if (updateProjectDto.description) project.description = updateProjectDto.description;
+    Object.assign(project, updateProjectDto);
     return this.projectsRepository.save(project);
   }
 

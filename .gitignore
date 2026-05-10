@@ -3,3 +3,9 @@ node_modules
 dist
 build
 .env
+db.sqlite
+backend/db.sqlite
+uploads/
+backend/uploads/
+.DS_Store
+*.log
