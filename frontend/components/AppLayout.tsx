@@ -61,7 +61,6 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           <Link href="/notifications" className="nav-item" style={{ position: 'relative' }} title="الإشعارات">
             🔔
-            <span style={{ position: 'absolute', top: '0', right: '0', background: 'var(--danger)', color: 'white', fontSize: '0.7rem', width: '16px', height: '16px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>3</span>
           </Link>
           <div style={{ fontSize: '0.9rem', fontWeight: 'bold', color: 'var(--primary)', background: 'rgba(20, 168, 0, 0.1)', padding: '5px 10px', borderRadius: '15px' }}>
             {role === 'team_leader' ? 'قائد فريق' : role === 'admin' ? 'مدير المنصة' : 'مستقل'}
